@@ -16,7 +16,7 @@ const rateLimiting = require('./middleware/rateLimiting');
 
 //variables
 const app= express()
-const PORT=process.env.PORT || 8000
+const PORT=process.env.PORT || 7000
 const saltround=12
 
 //mongo db connection
@@ -152,7 +152,7 @@ if(!loginId || !password || typeof loginId !=='string' || typeof password !=='st
   })
 }
 
-let userDB
+let userDB 
 try { 
   if(validator.isEmail(loginId)){
    userDB= await UserSchema.findOne({email:loginId})
